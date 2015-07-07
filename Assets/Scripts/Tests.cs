@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Manager : MonoBehaviour {
+public class Tests : MonoBehaviour {
 
-    public Player player;
+    public PlayerManager player;
 
     int i = 1;
 
@@ -23,5 +23,10 @@ public class Manager : MonoBehaviour {
                 break;
         }
         i++;
+    }
+
+    public void SetPlayerAccuracy(float value)
+    {
+        PlayerManager.Script.accuracy = value;
     }
 }

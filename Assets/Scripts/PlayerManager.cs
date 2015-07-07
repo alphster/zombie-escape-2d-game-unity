@@ -1,25 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
+public class PlayerManager : MonoBehaviour {
+
+    public static PlayerManager Script;
 
     public float speed = 3.0f;
+    public float accuracy = 0.1f;
     public Animator legs;
     public SpriteRenderer torso;
-    public WeaponBehavior weapon;
+
+    public GameObject heldWeapon;
+    private WeaponBehavior heldWeaponScript;
 
     Rigidbody2D rb2d;
 
 	// Use this for initialization
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
+        Script = GetComponent<PlayerManager>();
+
+        if (heldWeapon) heldWeaponScript = heldWeapon.GetComponent<WeaponBehavior>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButton("Fire1") && weapon != null) weapon.PullTrigger();
+        if (Input.GetButton("Fire1") && heldWeapon != null) heldWeaponScript.PullTrigger();
 
         TalkToChildren();
+
+        //Debug.Log(heldWeapon + " "  + heldWeaponScript);
 	}
 
     void FixedUpdate()
@@ -43,6 +53,15 @@ public class Player : MonoBehaviour {
         legs.SetFloat("speed", rb2d.velocity.magnitude);
     }
 
+    public void AddWeapon(GameObject prefabWeapon)
+    {
+        if (heldWeapon) Destroy(heldWeapon);
+        GameObject weapon = (GameObject)Instantiate(prefabWeapon, transform.position, transform.rotation);
+        heldWeapon = weapon;
+        heldWeaponScript = heldWeapon.GetComponent<WeaponBehavior>();
+        heldWeapon.transform.SetParent(this.transform);
+    }
+
     public void SetCharacter(string name)
     {
         switch(name)
@@ -60,6 +79,5 @@ public class Player : MonoBehaviour {
                 torso.sprite = Resources.Load<Sprite>("Sprites/Humanoids/Soldier/soldier_torso_2h");
                 break;
         }
-
     }
 }
