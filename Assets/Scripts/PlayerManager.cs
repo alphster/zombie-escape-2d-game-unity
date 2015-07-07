@@ -48,6 +48,11 @@ public class PlayerManager : MonoBehaviour {
         transform.rotation = Quaternion.LookRotation(Vector3.forward, mousePos - transform.position);
     }
 
+    public Rigidbody2D GetRigidBody2D()
+    {
+        return rb2d;
+    }
+
     void TalkToChildren()
     {
         legs.SetFloat("speed", rb2d.velocity.magnitude);
