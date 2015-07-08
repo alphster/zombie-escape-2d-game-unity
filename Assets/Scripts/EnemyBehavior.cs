@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyBehavior : MonoBehaviour {
 
     public float speed = 2.0f;
+    public float health = 100;
 
     Rigidbody2D rb2d;
     Animator animator;
@@ -15,9 +16,20 @@ public class EnemyBehavior : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {        
+	void Update () {
+        Move();     
+	}
+
+    public void TakeDamage(float projectileDamage)
+    {
+        health -= projectileDamage;
+        if (health < 0) GameObject.Destroy(this.gameObject);
+    }
+
+    void Move()
+    {
         var playerDistance = Vector2.Distance(PlayerManager.Script.transform.position, transform.position);
-	    animator.SetFloat("playerDistance", playerDistance);
+        animator.SetFloat("playerDistance", playerDistance);
         //Debug.Log(Vector2.Distance(PlayerManager.Script.GetRigidBody2D().position, rb2d.position));
 
         var dir = PlayerManager.Script.transform.position - transform.position;
@@ -28,7 +40,5 @@ public class EnemyBehavior : MonoBehaviour {
         //transform.LookAt(playerRb2d.transform);
 
         //rb2d.velocity = speed * 
-        
-        
-	}
+    }
 }

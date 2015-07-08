@@ -4,6 +4,7 @@ using System.Collections;
 public class ProjectileMover : MonoBehaviour {
 
     public float speed = 20.0f;
+    public float damage = 0;
 
     Rigidbody2D rb2d;
 

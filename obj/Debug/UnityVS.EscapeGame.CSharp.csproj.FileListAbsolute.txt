@@ -6,11 +6,12 @@ C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.Analytics.dll
 C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.dll
 C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.Networking.dll
 C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
-C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.xml
 C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEditor.xml
-C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
-C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.Networking.xml
 C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.Analytics.xml
 C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
 C:\Code\EscapeGame\obj\Debug\Assembly-CSharp.dll
 C:\Code\EscapeGame\obj\Debug\Assembly-CSharp.pdb
+C:\Code\EscapeGame\obj\Debug\UnityVS.EscapeGame.CSharp.csprojResolveAssemblyReference.cache
+C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Code\EscapeGame\Temp\UnityVS_bin\Debug\UnityEngine.Networking.xml

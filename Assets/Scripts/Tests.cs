@@ -29,4 +29,17 @@ public class Tests : MonoBehaviour {
     {
         PlayerManager.Script.accuracy = value;
     }
+
+    public void SwarmZombies()
+    {
+        var zombiePrefab = Resources.Load("Prefabs/Enemies/Zombie");
+
+        for (int i = 1; i < 100; i++)
+        {
+            var x = Random.Range(10, 20) * (Random.Range(0,2) * 2 - 1);
+            var y = Random.Range(10, 20) * (Random.Range(0,2) * 2 - 1);
+
+            Instantiate(zombiePrefab, new Vector3(x, y, 0), Quaternion.identity);
+        }
+    }
 }
