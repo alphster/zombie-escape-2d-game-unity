@@ -41,8 +41,8 @@ public class WeaponBehavior : MonoBehaviour {
             var finalRotation = Quaternion.Euler(projectileSpawn.rotation.eulerAngles + new Vector3(0, 0, angleFlaw));//new Quaternion(projectileSpawn.rotation.x, projectileSpawn.rotation.y, projectileSpawn.rotation.z + 0.1f, projectileSpawn.rotation.w);
             
             // push damage value to projectile
-            var obj = (GameObject)Instantiate(projectile, projectileSpawn.position, finalRotation);
-            obj.GetComponent<ProjectileMover>().damage = 10.0f;            
+            var obj = (GameObject)Instantiate(projectile, projectileSpawn.position, finalRotation);            
+            obj.GetComponent<ProjectileMover>().damage = 10.0f;
         }
     }
 }

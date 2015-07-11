@@ -20,7 +20,6 @@ public class EnemyHit : MonoBehaviour {
         
         if (other.tag == "Projectile")
         {
-            Debug.Log("here");
             parentScript.TakeDamage(other.GetComponent<ProjectileMover>().damage);
 
             var bloodSpurt = flip ? bloodSpurt1 : bloodSpurt2;
@@ -28,9 +27,7 @@ public class EnemyHit : MonoBehaviour {
 
             var rot = other.transform.rotation.eulerAngles;
             rot = new Vector3(rot.x, rot.y, rot.z + 180);
-
-            Debug.Log(rot);
-            Instantiate(bloodSpurt, other.transform.position, Quaternion.Euler(rot));
+            Instantiate(bloodSpurt, transform.position, Quaternion.Euler(rot));
         }
     }
 }
